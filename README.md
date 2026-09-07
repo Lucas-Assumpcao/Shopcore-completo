@@ -71,7 +71,7 @@ npm run dev
 
 ## Status
 
-Em desenvolvimento — Etapa 1 (autenticação) concluída. Próximo passo: middleware de proteção de rotas com JWT.
+Em desenvolvimento — Etapas 1 (autenticação) e 2 (middleware de proteção) concluídas. Próximo passo: CRUD de produtos.
 
 ## Escopo
 

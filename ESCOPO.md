@@ -51,8 +51,8 @@ Ao criar um pedido:
 ## Status
 
 ✅ Etapa 1 — Autenticação concluída (cadastro e login, senha com hash bcrypt, geração de JWT)
-🔲 Etapa 2 — Middleware de proteção de rotas (próximo passo)
-🔲 Etapa 3 — CRUD de produtos
+✅ Etapa 2 — Middleware de proteção de rotas concluído (verificação de JWT no header Authorization)
+🔲 Etapa 3 — CRUD de produtos (próximo passo)
 🔲 Etapa 4 — Pedidos e regra de negócio
 🔲 Etapa 5 — Testes via Thunder Client
 🔲 Etapa 6 — Front-end (React + Tailwind)
@@ -63,6 +63,12 @@ Ao criar um pedido:
 - `node:sqlite` não tem o atalho `.pragma()` do `better-sqlite3`; o mesmo efeito é obtido com `db.exec('PRAGMA foreign_keys = ON;')`
 - Login e cadastro nunca revelam qual dado está errado (email inexistente vs senha incorreta respondem com a mesma mensagem genérica), evitando enumeração de usuários
 - Senha nunca é devolvida nas respostas da API, nem em texto puro nem como hash
+
+## Decisões e aprendizados (Etapa 2)
+
+- Middleware criado em `middlewares/auth.js` (não em `controllers/`) — middleware é reusado por várias rotas, não pertence à lógica de uma rota específica
+- Token esperado no header `Authorization: Bearer <token>`; `jwt.verify` valida assinatura e expiração ao mesmo tempo
+- `req.usuario` é populado pelo middleware para que os próximos controllers (produtos, pedidos) saibam de quem é a requisição sem repetir a verificação
 
 ## Fora de escopo (decisão consciente)
 
