@@ -54,8 +54,25 @@ Ao criar um pedido:
 ✅ Etapa 2 — Middleware de proteção de rotas concluído (verificação de JWT no header Authorization)
 ✅ Etapa 3 — CRUD de produtos concluído (listagem pública, criação/edição/remoção protegidas por JWT)
 ✅ Etapa 4 — Pedidos e regra de negócio concluído (verificação de estoque, cálculo automático de total, transação)
-🔲 Etapa 5 — Testes via Thunder Client
-🔲 Etapa 6 — Front-end (React + Tailwind)
+✅ Etapa 5 — Testes via Thunder Client concluído (todas as rotas e cenários de erro validados)
+🔲 Etapa 6 — Front-end (React + Tailwind) (próximo passo)
+
+## Testes realizados (Etapa 5)
+
+| Rota | Cenário | Resultado |
+|---|---|---|
+| `POST /auth/cadastro` | Cadastro válido | 201 + dados do usuário (sem senha) |
+| `POST /auth/cadastro` | Email já existente | 400 |
+| `POST /auth/login` | Credenciais corretas | 200 + token JWT |
+| `POST /auth/login` | Senha errada | 401 |
+| `GET /produtos` | Sem token (pública) | 200 + array de produtos |
+| `POST /produtos` | Sem token | 401 |
+| `POST /produtos` | Com token válido | 201 + produto criado |
+| `PUT /produtos/:id` | Com token válido | 200 + produto atualizado |
+| `DELETE /produtos/:id` | Com token válido | 204 |
+| `POST /pedidos` | Estoque suficiente | 201 + total calculado, estoque debitado |
+| `POST /pedidos` | Estoque insuficiente | 400, estoque inalterado (rollback) |
+| `GET /pedidos` | Com token | 200 + histórico do usuário
 
 ## Decisões e aprendizados (Etapa 4)
 
