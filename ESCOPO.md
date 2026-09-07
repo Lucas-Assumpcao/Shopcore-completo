@@ -52,10 +52,16 @@ Ao criar um pedido:
 
 ✅ Etapa 1 — Autenticação concluída (cadastro e login, senha com hash bcrypt, geração de JWT)
 ✅ Etapa 2 — Middleware de proteção de rotas concluído (verificação de JWT no header Authorization)
-🔲 Etapa 3 — CRUD de produtos (próximo passo)
-🔲 Etapa 4 — Pedidos e regra de negócio
+✅ Etapa 3 — CRUD de produtos concluído (listagem pública, criação/edição/remoção protegidas por JWT)
+🔲 Etapa 4 — Pedidos e regra de negócio (próximo passo)
 🔲 Etapa 5 — Testes via Thunder Client
 🔲 Etapa 6 — Front-end (React + Tailwind)
+
+## Decisões e aprendizados (Etapa 3)
+
+- Rota `GET /produtos` é pública (listagem do catálogo); `POST`, `PUT` e `DELETE` são protegidas pelo middleware `verificarToken`
+- `req.params.id` usado para identificar o produto em `PUT /produtos/:id` e `DELETE /produtos/:id` — diferente do `req.body`, que carrega os dados a serem gravados
+- Testado que a proteção funciona nos dois sentidos: bloqueia com `401` sem token, libera com `201` quando o header `Authorization: Bearer <token>` está correto
 
 ## Decisões e aprendizados (Etapa 1)
 

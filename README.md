@@ -71,7 +71,7 @@ npm run dev
 
 ## Status
 
-Em desenvolvimento — Etapas 1 (autenticação) e 2 (middleware de proteção) concluídas. Próximo passo: CRUD de produtos.
+Em desenvolvimento — Etapas 1 (autenticação), 2 (middleware) e 3 (CRUD de produtos) concluídas. Próximo passo: pedidos e regra de negócio.
 
 ## Escopo
 
