@@ -1,4 +1,4 @@
-# ESCOPO — ShopCore
+pedidoFinalizado# ESCOPO — ShopCore
 
 ## Motivação
 
@@ -60,8 +60,8 @@ Ao criar um pedido:
   - ✅ 6.2 Autenticação no front (AuthContext, tela de Login, tratamento de erro)
   - ✅ 6.3 Listagem de produtos (grid com nome, preço e estoque, consumindo GET /produtos)
   - ✅ 6.4 Carrinho de compras (Context com adicionar/remover/somar quantidade, cálculo de total)
-  - 🔲 6.5 Finalizar pedido (próximo passo)
-  - 🔲 6.6 Histórico de pedidos
+  - ✅ 6.5 Finalizar pedido (POST /pedidos, tratamento de sucesso e erro de estoque na tela)
+  - 🔲 6.6 Histórico de pedidos (próximo passo)
 
 ## Decisões e aprendizados (Etapa 6.1 e 6.2)
 
