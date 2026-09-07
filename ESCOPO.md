@@ -53,9 +53,17 @@ Ao criar um pedido:
 ✅ Etapa 1 — Autenticação concluída (cadastro e login, senha com hash bcrypt, geração de JWT)
 ✅ Etapa 2 — Middleware de proteção de rotas concluído (verificação de JWT no header Authorization)
 ✅ Etapa 3 — CRUD de produtos concluído (listagem pública, criação/edição/remoção protegidas por JWT)
-🔲 Etapa 4 — Pedidos e regra de negócio (próximo passo)
+✅ Etapa 4 — Pedidos e regra de negócio concluído (verificação de estoque, cálculo automático de total, transação)
 🔲 Etapa 5 — Testes via Thunder Client
 🔲 Etapa 6 — Front-end (React + Tailwind)
+
+## Decisões e aprendizados (Etapa 4)
+
+- Criação de pedido usa transação (`BEGIN`/`COMMIT`/`ROLLBACK`) — se qualquer item falhar (produto inexistente ou estoque insuficiente), nada é salvo e o estoque não é alterado
+- Preço gravado em `itens_pedido` vem do produto no momento da compra, não é recalculado depois — histórico do pedido não muda se o preço do produto mudar
+- Total do pedido é calculado no back-end (quantidade × preço atual), nunca confiando em um valor enviado pelo cliente
+- Ambas as rotas de pedidos (`POST` e `GET`) são protegidas — diferente de produtos, não existe pedido "público"
+- Testado: criação com sucesso debita estoque corretamente; pedido com quantidade acima do estoque é bloqueado com 400 e não altera nada; histórico lista corretamente os pedidos do usuário logado
 
 ## Decisões e aprendizados (Etapa 3)
 

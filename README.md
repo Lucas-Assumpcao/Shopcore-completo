@@ -71,7 +71,7 @@ npm run dev
 
 ## Status
 
-Em desenvolvimento — Etapas 1 (autenticação), 2 (middleware) e 3 (CRUD de produtos) concluídas. Próximo passo: pedidos e regra de negócio.
+Em desenvolvimento — Etapas 1 (autenticação), 2 (middleware), 3 (CRUD de produtos) e 4 (pedidos e regra de negócio) concluídas. Próximo passo: testes finais via Thunder Client.
 
 ## Escopo
 
