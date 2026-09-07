@@ -127,3 +127,16 @@ Ao criar um pedido:
 - Categorias de produto
 - Carrinho persistente entre sessões
 - Pagamento real (gateway de pagamento)
+
+## Considerações finais
+
+O ShopCore fechou as duas lacunas que motivaram o projeto: banco de dados relacional de verdade (4 tabelas com chave estrangeira, transação garantindo consistência entre pedido e estoque) e autenticação completa (hash de senha, JWT, middleware de proteção reutilizável).
+
+**Principais desafios técnicos superados:**
+- Migração de `better-sqlite3` para `node:sqlite` por incompatibilidade de compilação nativa no Windows — resolvido sem perder a API síncrona nem a funcionalidade
+- Uso de transação (`BEGIN`/`COMMIT`/`ROLLBACK`) para garantir que a criação de pedido nunca deixe o banco num estado inconsistente
+- Modelagem correta do histórico de preço (`itens_pedido.preco_unitario`), evitando que o histórico de vendas mude se o preço do produto for atualizado depois
+
+**Habilidades demonstradas para o portfólio:** modelagem de banco relacional, autenticação com JWT e hash de senha, regras de negócio com transação, consumo de API protegida em React via Context API, e organização de código em camadas (rotas, controllers, middlewares).
+
+**Próximos passos possíveis** (fora do escopo atual, mas naturais de evoluir): paginação na listagem de produtos, refresh token, deploy do back-end e front-end.
