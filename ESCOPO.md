@@ -59,8 +59,8 @@ Ao criar um pedido:
   - ✅ 6.1 Setup do projeto (Vite + React + Tailwind, api.js centralizado)
   - ✅ 6.2 Autenticação no front (AuthContext, tela de Login, tratamento de erro)
   - ✅ 6.3 Listagem de produtos (grid com nome, preço e estoque, consumindo GET /produtos)
-  - 🔲 6.4 Carrinho de compras (próximo passo)
-  - 🔲 6.5 Finalizar pedido
+  - ✅ 6.4 Carrinho de compras (Context com adicionar/remover/somar quantidade, cálculo de total)
+  - 🔲 6.5 Finalizar pedido (próximo passo)
   - 🔲 6.6 Histórico de pedidos
 
 ## Decisões e aprendizados (Etapa 6.1 e 6.2)

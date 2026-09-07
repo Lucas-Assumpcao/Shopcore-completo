@@ -71,7 +71,7 @@ npm run dev
 
 ## Status
 
-Back-end completo e testado. Front-end em desenvolvimento — setup, autenticação e listagem de produtos (6.1 a 6.3) concluídos. Próximo passo: carrinho de compras.
+Back-end completo e testado. Front-end em desenvolvimento — setup, autenticação, listagem de produtos e carrinho (6.1 a 6.4) concluídos. Próximo passo: finalizar pedido.
 
 ## Escopo
 
