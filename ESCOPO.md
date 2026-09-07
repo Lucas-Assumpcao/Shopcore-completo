@@ -58,8 +58,8 @@ Ao criar um pedido:
 🔲 Etapa 6 — Front-end (React + Tailwind)
   - ✅ 6.1 Setup do projeto (Vite + React + Tailwind, api.js centralizado)
   - ✅ 6.2 Autenticação no front (AuthContext, tela de Login, tratamento de erro)
-  - 🔲 6.3 Listagem de produtos (próximo passo)
-  - 🔲 6.4 Carrinho de compras
+  - ✅ 6.3 Listagem de produtos (grid com nome, preço e estoque, consumindo GET /produtos)
+  - 🔲 6.4 Carrinho de compras (próximo passo)
   - 🔲 6.5 Finalizar pedido
   - 🔲 6.6 Histórico de pedidos
 
