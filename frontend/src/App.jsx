@@ -1,6 +1,8 @@
 import { AuthProvider, useAuth } from './context/AuthContext';
+import { CarrinhoProvider } from './context/CarrinhoContext';
 import { Login } from './pages/Login';
 import { Produtos } from './pages/Produtos';
+import { Carrinho } from './components/Carrinho';
 
 function Conteudo() {
   const { logado, logout } = useAuth();
@@ -10,17 +12,20 @@ function Conteudo() {
   }
 
   return (
-    <div>
-      <div className="flex justify-end p-4">
-        <button
-          onClick={logout}
-          className="bg-gray-200 rounded px-4 py-2 hover:bg-gray-300"
-        >
-          Sair
-        </button>
+    <CarrinhoProvider>
+      <div>
+        <div className="flex justify-end p-4">
+          <button
+            onClick={logout}
+            className="bg-gray-200 rounded px-4 py-2 hover:bg-gray-300"
+          >
+            Sair
+          </button>
+        </div>
+        <Produtos />
+        <Carrinho />
       </div>
-      <Produtos />
-    </div>
+    </CarrinhoProvider>
   );
 }
 

@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { api } from '../services/api';
+import { useCarrinho } from '../context/CarrinhoContext';
 
 export function Produtos() {
   const [produtos, setProdutos] = useState([]);
   const [carregando, setCarregando] = useState(true);
   const [erro, setErro] = useState('');
+  const { adicionarItem } = useCarrinho();
 
   useEffect(() => {
     api
@@ -34,6 +36,12 @@ export function Produtos() {
               R$ {produto.preco.toFixed(2)}
             </p>
             <p className="text-sm text-gray-500">Estoque: {produto.estoque}</p>
+            <button
+              onClick={() => adicionarItem(produto)}
+              className="mt-3 w-full bg-blue-600 text-white rounded py-1.5 text-sm hover:bg-blue-700"
+            >
+              Adicionar ao carrinho
+            </button>
           </div>
         ))}
       </div>
