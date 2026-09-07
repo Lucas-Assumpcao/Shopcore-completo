@@ -50,7 +50,19 @@ Ao criar um pedido:
 
 ## Status
 
-🔲 Não iniciado — modelo de dados e estrutura de pastas definidos, próximo passo é a rota de autenticação.
+✅ Etapa 1 — Autenticação concluída (cadastro e login, senha com hash bcrypt, geração de JWT)
+🔲 Etapa 2 — Middleware de proteção de rotas (próximo passo)
+🔲 Etapa 3 — CRUD de produtos
+🔲 Etapa 4 — Pedidos e regra de negócio
+🔲 Etapa 5 — Testes via Thunder Client
+🔲 Etapa 6 — Front-end (React + Tailwind)
+
+## Decisões e aprendizados (Etapa 1)
+
+- Trocado `better-sqlite3` pelo módulo nativo `node:sqlite` (Release Candidate desde o Node 24.15) — evita a necessidade de compilar código nativo com Visual Studio Build Tools no Windows
+- `node:sqlite` não tem o atalho `.pragma()` do `better-sqlite3`; o mesmo efeito é obtido com `db.exec('PRAGMA foreign_keys = ON;')`
+- Login e cadastro nunca revelam qual dado está errado (email inexistente vs senha incorreta respondem com a mesma mensagem genérica), evitando enumeração de usuários
+- Senha nunca é devolvida nas respostas da API, nem em texto puro nem como hash
 
 ## Fora de escopo (decisão consciente)
 

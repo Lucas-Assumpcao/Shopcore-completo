@@ -71,7 +71,7 @@ npm run dev
 
 ## Status
 
-Em desenvolvimento — próximo passo: implementação da rota de autenticação.
+Em desenvolvimento — Etapa 1 (autenticação) concluída. Próximo passo: middleware de proteção de rotas com JWT.
 
 ## Escopo
 
