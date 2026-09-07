@@ -1,4 +1,4 @@
-pedidoFinalizado# ESCOPO — ShopCore
+# ESCOPO — ShopCore
 
 ## Motivação
 
@@ -55,13 +55,21 @@ Ao criar um pedido:
 ✅ Etapa 3 — CRUD de produtos concluído (listagem pública, criação/edição/remoção protegidas por JWT)
 ✅ Etapa 4 — Pedidos e regra de negócio concluído (verificação de estoque, cálculo automático de total, transação)
 ✅ Etapa 5 — Testes via Thunder Client concluído (todas as rotas e cenários de erro validados)
-🔲 Etapa 6 — Front-end (React + Tailwind)
+✅ Etapa 6 — Front-end (React + Tailwind)
   - ✅ 6.1 Setup do projeto (Vite + React + Tailwind, api.js centralizado)
   - ✅ 6.2 Autenticação no front (AuthContext, tela de Login, tratamento de erro)
   - ✅ 6.3 Listagem de produtos (grid com nome, preço e estoque, consumindo GET /produtos)
   - ✅ 6.4 Carrinho de compras (Context com adicionar/remover/somar quantidade, cálculo de total)
   - ✅ 6.5 Finalizar pedido (POST /pedidos, tratamento de sucesso e erro de estoque na tela)
-  - 🔲 6.6 Histórico de pedidos (próximo passo)
+  - ✅ 6.6 Histórico de pedidos (GET /pedidos, navegação por abas entre Produtos e Meus pedidos)
+
+**Projeto concluído — todas as etapas testadas de ponta a ponta.**
+
+## Decisões e aprendizados (Etapa 6.3 a 6.6)
+
+- Listagem de produtos e histórico de pedidos usam `useEffect` com array de dependências vazio (`[]`) para buscar dados uma única vez ao montar o componente
+- Carrinho traduz `{ produto, quantidade }` (formato interno) para `{ produto_id, quantidade }` (formato esperado pela API) apenas no momento de finalizar o pedido
+- Navegação entre "Produtos" e "Meus pedidos" resolvida com abas simples via `useState`, sem precisar de biblioteca de rotas (escopo enxuto, sem React Router)
 
 ## Decisões e aprendizados (Etapa 6.1 e 6.2)
 
