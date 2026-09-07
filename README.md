@@ -71,7 +71,7 @@ npm run dev
 
 ## Status
 
-Back-end completo e testado — Etapas 1 a 5 concluídas (autenticação, middleware, CRUD de produtos, pedidos com regra de negócio, testes via Thunder Client). Próximo passo: front-end em React + Tailwind.
+Back-end completo e testado. Front-end em desenvolvimento — setup e autenticação (6.1, 6.2) concluídos. Próximo passo: listagem de produtos.
 
 ## Escopo
 

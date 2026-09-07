@@ -55,7 +55,19 @@ Ao criar um pedido:
 ✅ Etapa 3 — CRUD de produtos concluído (listagem pública, criação/edição/remoção protegidas por JWT)
 ✅ Etapa 4 — Pedidos e regra de negócio concluído (verificação de estoque, cálculo automático de total, transação)
 ✅ Etapa 5 — Testes via Thunder Client concluído (todas as rotas e cenários de erro validados)
-🔲 Etapa 6 — Front-end (React + Tailwind) (próximo passo)
+🔲 Etapa 6 — Front-end (React + Tailwind)
+  - ✅ 6.1 Setup do projeto (Vite + React + Tailwind, api.js centralizado)
+  - ✅ 6.2 Autenticação no front (AuthContext, tela de Login, tratamento de erro)
+  - 🔲 6.3 Listagem de produtos (próximo passo)
+  - 🔲 6.4 Carrinho de compras
+  - 🔲 6.5 Finalizar pedido
+  - 🔲 6.6 Histórico de pedidos
+
+## Decisões e aprendizados (Etapa 6.1 e 6.2)
+
+- Cliente de API centralizado em `services/api.js`: anexa o token JWT automaticamente via `localStorage`, evitando repetir essa lógica em cada tela
+- Estado de autenticação compartilhado via `AuthContext` (Context API do React) — evita passar o token manualmente entre componentes
+- Erro do formulário de login tratado localmente com `try/catch`, mostrando mensagem sem trocar de tela
 
 ## Testes realizados (Etapa 5)
 
